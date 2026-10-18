@@ -15,9 +15,10 @@ var max_force: float:
 @onready var flock := get_parent() as Flock
 
 var heading: float:
-	 ## read-only
+	## read-only
 	get:
 		return velocity.angle() if velocity.length_squared() > 1.0 else rotation
+
 
 func _process(delta):
 	if target:

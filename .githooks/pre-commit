@@ -1,0 +1,15 @@
+#!/bin/sh
+# Reject commits with unformatted GDScript. Enable with: git config core.hooksPath .githooks
+
+if ! command -v gdscript-formatter >/dev/null 2>&1; then
+	echo "warning: gdscript-formatter not on PATH, skipping format check (see README.md)"
+	exit 0
+fi
+
+files=$(git diff --cached --name-only --diff-filter=ACMR -- '*.gd' | grep -v '^addons/')
+[ -z "$files" ] && exit 0
+
+if ! gdscript-formatter --check $files; then
+	echo "Run gdscript-formatter on the files above, or save them in Godot (format on save)."
+	exit 1
+fi

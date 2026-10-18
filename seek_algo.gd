@@ -1,6 +1,11 @@
 class_name SeekAlgo
 
-enum Mode { STOP, RUSH, SEEK, ARRIVE }
+enum Mode {
+	STOP,
+	RUSH,
+	SEEK,
+	ARRIVE,
+}
 
 
 static func steer(mode: Mode, bee: Bee, target: Node2D, delta: float) -> Vector2:
@@ -15,11 +20,17 @@ static func steer(mode: Mode, bee: Bee, target: Node2D, delta: float) -> Vector2
 			return _arrive(bee, target.global_position, delta)
 	return Vector2.ZERO
 
+
 static func _stop(bee: Bee) -> Vector2:
 	return -bee.velocity
-	
+
+
 static func _rush(bee: Bee, target: Vector2, delta: float) -> Vector2:
-	var heading = rotate_toward(bee.heading, (target - bee.global_position).angle(), bee.max_turn_rate * delta)
+	var heading = rotate_toward(
+		bee.heading,
+		(target - bee.global_position).angle(),
+		bee.max_turn_rate * delta,
+	)
 	return Vector2.from_angle(heading) * bee.max_speed - bee.velocity
 
 

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ihmx315522af"]
+
+[ext_resource type="Texture2D" uid="uid://dkbujqmb716f2" path="res://icon.svg" id="1_icon"]
+[ext_resource type="Script" uid="uid://bahrxfcmkniqs" path="res://player.gd" id="2_player"]
+[ext_resource type="Script" uid="uid://bs8ipaumd0c51" path="res://boid.gd" id="3_boid"]
+
+[node name="Main" type="Node2D" unique_id=185248290]
+
+[node name="Player" type="Node2D" parent="." unique_id=405555263]
+position = Vector2(576, 324)
+script = ExtResource("2_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=2075134317]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_icon")
+
+[node name="Boid" type="Node2D" parent="." unique_id=1538725887 node_paths=PackedStringArray("target") groups=["boids"]]
+position = Vector2(150, 150)
+script = ExtResource("3_boid")
+target = NodePath("../Player")
+
+[node name="Arrow" type="Polygon2D" parent="Boid" unique_id=34624457]
+color = Color(1, 0.8, 0.2, 1)
+polygon = PackedVector2Array(14, 0, -8, -8, -4, 0, -8, 8)
+
+[node name="Boid2" type="Node2D" parent="." unique_id=1372333250 node_paths=PackedStringArray("target") groups=["boids"]]
+position = Vector2(150, 150)
+script = ExtResource("3_boid")
+target = NodePath("../Boid")
+
+[node name="Arrow" type="Polygon2D" parent="Boid2" unique_id=1397565504]
+color = Color(1, 0.8, 0.2, 1)
+polygon = PackedVector2Array(14, 0, -8, -8, -4, 0, -8, 8)

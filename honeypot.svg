@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+	<!-- pot body -->
+	<path d="M40 40 C16 50 12 80 20 98 C28 118 100 118 108 98 C116 80 112 50 88 40 Z" fill="#c8741f" stroke="#5a3210" stroke-width="4" stroke-linejoin="round"/>
+	<!-- highlight -->
+	<path d="M32 60 C26 72 26 86 30 96" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+	<!-- rim -->
+	<rect x="30" y="28" width="68" height="16" rx="6" fill="#8b4f1d" stroke="#5a3210" stroke-width="4"/>
+	<!-- honey spilling over the rim -->
+	<path d="M34 32 Q34 22 44 22 H84 Q94 22 94 32 V36 Q94 40 90 40 Q86 40 86 44 V56 Q86 60 82 60 Q78 60 78 56 V44 Q78 40 72 40 H56 Q52 40 52 46 V50 Q52 54 48 54 Q44 54 44 50 V44 Q44 40 38 40 Q34 40 34 36 Z" fill="#ffc21a" stroke="#a06a00" stroke-width="3" stroke-linejoin="round"/>
+	<!-- label with honeycomb cell -->
+	<rect x="40" y="68" width="48" height="26" rx="5" fill="#f6e3b4" stroke="#5a3210" stroke-width="3"/>
+	<polygon points="72,81 68,74 60,74 56,81 60,88 68,88" fill="#ffc21a" stroke="#a06a00" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

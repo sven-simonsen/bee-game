@@ -1,6 +1,7 @@
 class_name Bee
 extends Node2D
 
+## Overrides the flock's target when set.
 @export var target: Node2D
 @export var max_speed := 250.0
 @export var max_turn_rate := 2.0
@@ -21,8 +22,9 @@ var heading: float:
 
 
 func _process(delta):
-	if target:
-		velocity += SeekAlgo.steer(flock.seek_mode, self, target, delta)
+	var goal := target if target else flock.target
+	if goal:
+		velocity += SeekAlgo.steer(flock.seek_mode, self, goal, delta)
 	position += velocity * delta
 	if velocity.length_squared() > 1.0:
 		rotation = velocity.angle()

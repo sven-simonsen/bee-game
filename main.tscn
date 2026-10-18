@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dkbujqmb716f2" path="res://icon.svg" id="1_icon"]
 [ext_resource type="Script" uid="uid://bahrxfcmkniqs" path="res://player.gd" id="2_player"]
 [ext_resource type="Script" uid="uid://cdai4txb7p13c" path="res://flock.gd" id="3_1bvp3"]
-[ext_resource type="Script" uid="uid://bs8ipaumd0c51" path="res://bee.gd" id="3_bee"]
+[ext_resource type="Texture2D" uid="uid://bawp1jyj4bxft" path="res://honeypot.svg" id="4_honeypot"]
+[ext_resource type="PackedScene" uid="uid://hwyvtyx0pwvu" path="res://bee_1.tscn" id="4_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=185248290]
 
@@ -15,25 +16,32 @@ script = ExtResource("2_player")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_icon")
 
-[node name="Schwarm1" type="Node2D" parent="." unique_id=129872439]
+[node name="Schwarm1" type="Node2D" parent="." unique_id=129872439 node_paths=PackedStringArray("target")]
 script = ExtResource("3_1bvp3")
+target = NodePath("../Player")
 seek_mode = 1
 
-[node name="Bee1" type="Node2D" parent="Schwarm1" unique_id=1538725887 node_paths=PackedStringArray("target") groups=["bees"]]
-position = Vector2(150, 150)
-script = ExtResource("3_bee")
-target = NodePath("../../Player")
+[node name="Bee1" parent="Schwarm1" unique_id=1011975645 instance=ExtResource("4_lquwl")]
+position = Vector2(347, 114)
 
-[node name="Arrow" type="Polygon2D" parent="Schwarm1/Bee1" unique_id=34624457]
-position = Vector2(-1, 0)
-color = Color(1, 0.8, 0.2, 1)
-polygon = PackedVector2Array(14, 0, -8, -8, -4, 0, -8, 8)
+[node name="Bee2" parent="Schwarm1" unique_id=2092506379 instance=ExtResource("4_lquwl")]
+position = Vector2(206, 104)
 
-[node name="Bee2" type="Node2D" parent="Schwarm1" unique_id=1372333250 node_paths=PackedStringArray("target") groups=["bees"]]
-position = Vector2(172, 300)
-script = ExtResource("3_bee")
-target = NodePath("../Bee1")
+[node name="Bee3" parent="Schwarm1" unique_id=1737169670 instance=ExtResource("4_lquwl")]
+position = Vector2(146, 248)
 
-[node name="Arrow" type="Polygon2D" parent="Schwarm1/Bee2" unique_id=1397565504]
-color = Color(1, 0.8, 0.2, 1)
-polygon = PackedVector2Array(14, 0, -8, -8, -4, 0, -8, 8)
+[node name="Bee4" parent="Schwarm1" unique_id=2069495414 instance=ExtResource("4_lquwl")]
+position = Vector2(90, 379)
+
+[node name="Bee5" parent="Schwarm1" unique_id=1142420348 instance=ExtResource("4_lquwl")]
+position = Vector2(180, 419)
+
+[node name="Bee6" parent="Schwarm1" unique_id=1801283615 instance=ExtResource("4_lquwl")]
+position = Vector2(302, 247)
+
+[node name="HoneyPot" type="Node2D" parent="." unique_id=1082150037]
+position = Vector2(111, 93)
+
+[node name="Sprite2D" type="Sprite2D" parent="HoneyPot" unique_id=754945142]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_honeypot")

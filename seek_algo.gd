@@ -44,9 +44,9 @@ static func _seek(bee: Bee, point: Vector2, delta: float) -> Vector2:
 	return _reynolds_steer(bee, desired) * delta
 
 
-# Like seek, but slows down within flock.arrive_radius instead of overshooting.
+# Like seek, but slows down within bee.arrive_radius instead of overshooting.
 static func _arrive(bee: Bee, point: Vector2, delta: float) -> Vector2:
 	var offset := point - bee.global_position
 	var distance := offset.length()
-	var speed := bee.max_speed * minf(distance / bee.flock.arrive_radius, 1.0)
+	var speed := bee.max_speed * minf(distance / bee.arrive_radius, 1.0)
 	return _reynolds_steer(bee, offset.normalized() * speed) * delta

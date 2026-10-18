@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dkbujqmb716f2" path="res://icon.svg" id="1_icon"]
 [ext_resource type="Script" uid="uid://bahrxfcmkniqs" path="res://player.gd" id="2_player"]
-[ext_resource type="Script" uid="uid://cdai4txb7p13c" path="res://flock.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://cdai4txb7p13c" path="res://swarm.gd" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bawp1jyj4bxft" path="res://honeypot.svg" id="4_honeypot"]
 [ext_resource type="PackedScene" uid="uid://hwyvtyx0pwvu" path="res://bee_1.tscn" id="4_lquwl"]
 
@@ -16,27 +16,27 @@ script = ExtResource("2_player")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_icon")
 
-[node name="Schwarm1" type="Node2D" parent="." unique_id=129872439 node_paths=PackedStringArray("target")]
+[node name="Swarm1" type="Node2D" parent="." unique_id=129872439 node_paths=PackedStringArray("target")]
 script = ExtResource("3_1bvp3")
 target = NodePath("../Player")
 seek_mode = 1
 
-[node name="Bee1" parent="Schwarm1" unique_id=1011975645 instance=ExtResource("4_lquwl")]
+[node name="Bee1" parent="Swarm1" unique_id=1011975645 instance=ExtResource("4_lquwl")]
 position = Vector2(347, 114)
 
-[node name="Bee2" parent="Schwarm1" unique_id=2092506379 instance=ExtResource("4_lquwl")]
+[node name="Bee2" parent="Swarm1" unique_id=2092506379 instance=ExtResource("4_lquwl")]
 position = Vector2(206, 104)
 
-[node name="Bee3" parent="Schwarm1" unique_id=1737169670 instance=ExtResource("4_lquwl")]
+[node name="Bee3" parent="Swarm1" unique_id=1737169670 instance=ExtResource("4_lquwl")]
 position = Vector2(146, 248)
 
-[node name="Bee4" parent="Schwarm1" unique_id=2069495414 instance=ExtResource("4_lquwl")]
+[node name="Bee4" parent="Swarm1" unique_id=2069495414 instance=ExtResource("4_lquwl")]
 position = Vector2(90, 379)
 
-[node name="Bee5" parent="Schwarm1" unique_id=1142420348 instance=ExtResource("4_lquwl")]
+[node name="Bee5" parent="Swarm1" unique_id=1142420348 instance=ExtResource("4_lquwl")]
 position = Vector2(180, 419)
 
-[node name="Bee6" parent="Schwarm1" unique_id=1801283615 instance=ExtResource("4_lquwl")]
+[node name="Bee6" parent="Swarm1" unique_id=1801283615 instance=ExtResource("4_lquwl")]
 position = Vector2(302, 247)
 
 [node name="HoneyPot" type="Node2D" parent="." unique_id=1082150037]
